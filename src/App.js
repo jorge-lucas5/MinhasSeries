@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
-
+import { useState } from "react";
+import { Navbar, NavbarBrand, Collapse, Nav, NavItem, NavLink, NavbarToggler } from "reactstrap";
 function App() {
+
+  const [open, setOpen] = useState(false);
+  const toggle = () => { setOpen(!open) };
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Navbar color='dark' dark expand='md'>
+        <NavbarBrand href='#'>Minhas séries</NavbarBrand>
+        <NavbarToggler onClick={toggle}></NavbarToggler>
+        <Collapse isOpen={open} navbar>
+          <Nav className='ml-auto'>
+            <NavItem>
+              <NavLink href='/'>Gêneros</NavLink>
+            </NavItem>
+          </Nav>
+        </Collapse>
+      </Navbar>
+
     </div>
   );
 }
