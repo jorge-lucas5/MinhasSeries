@@ -1,5 +1,5 @@
 import { Header } from "./components/Header";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { Generos } from "./components/Generos";
@@ -24,11 +24,12 @@ function App() {
     <Router>
       <div>
         <Header />
-        <Route path='/' exact component={Home}></Route>
-        <Route path='/generos' exact component={Generos}></Route>
-        <Route path='/generos/novo' exact component={NovoGenero}></Route>
-        <Route path='/generos/:id' exact component={EditarGenero}></Route>
-        <pre>{JSON.stringify(data)}</pre>
+        <Switch>
+          <Route path='/' exact component={Home}></Route>
+          <Route path='/generos' exact component={Generos}></Route>
+          <Route path='/generos/novo' exact component={NovoGenero}></Route>
+          <Route path='/generos/:id' exact component={EditarGenero}></Route>
+        </Switch>
       </div>
     </Router>
   );
