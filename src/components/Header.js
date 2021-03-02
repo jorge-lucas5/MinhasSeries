@@ -7,7 +7,7 @@ export function Header() {
     const toggle = () => setIsOpen(!isOpen);
 
     return (
-        <div>
+        <div style={{ paddingBottom: '30px' }}>
             <Navbar color="dark" dark expand="md">
                 <NavbarBrand tag={Link} to='/'>Minhas Séries</NavbarBrand>
                 <NavbarToggler onClick={toggle} />
