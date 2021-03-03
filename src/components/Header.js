@@ -16,6 +16,9 @@ export function Header() {
                         <NavItem>
                             <NavLink tag={Link} to="/generos">Gêneros</NavLink>
                         </NavItem>
+                        <NavItem>
+                            <NavLink tag={Link} to="/series">Séries</NavLink>
+                        </NavItem>
                     </Nav>
                 </Collapse>
             </Navbar>
