@@ -26,11 +26,11 @@ export function Series() {
             <tr key={record.id}>
                 <th scope="row">{record.id}</th>
                 <td>{record.name}</td>
-                <td>{record.genre.toLowerCase()}</td>
-                <td>{record.status.toLowerCase()}</td>
+                <td>{record.genre}</td>
+                <td>{record.status}</td>
                 <td>
                     <button className='btn btn-danger' onClick={() => { deleteSerie(record.id) }}>-</button>
-                    <Link to={'/series/' + record.id} className='btn btn-info'>Editar</Link>
+                    <Link to={'/series/info/' + record.id} className='btn btn-info'>info</Link>
                 </td>
             </tr>
         );
